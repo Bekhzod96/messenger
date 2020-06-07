@@ -7,13 +7,15 @@
 		<div class="ui  fluid raised card chatbox">
 			<div class="content">
 				<div class="ui small feed">
+					<% @messages.each do |mes| %>
 					<div class="event">
 						<div class="content">
 							<div class="summary">
-								<em>Christian Rocha:</em> Test Message.
+								<em><%= mes.user.username %></em> <%=mes.body %>
 							</div>
 						</div>
 					</div>
+					<% end %>
 				</div>
 			</div>
 			<div class="extra content">
