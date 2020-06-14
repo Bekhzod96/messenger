@@ -5,28 +5,22 @@
 <div class="ui two colum grid">
 	<div class="twelve wide column">
 		<div class="ui  fluid raised card chatbox">
-			<div class="content">
-				<div class="ui small feed">
-					<% @messages.each do |mes| %>
-					<div class="event">
-						<div class="content">
-							<div class="summary">
-								<em><%= mes.user.username %></em> <%=mes.body %>
-							</div>
-						</div>
-					</div>
-					<% end %>
+			<div class="content" id="messages">
+				<div class="ui small feed" id="message_container">
+			
+					<%= render @messages %>
+	
 				</div>
 			</div>
 			<div class="extra content">
-				<form class="ui reply form">
+				<%= form_for(@message, html:{class:"ui reply form", role:"form"}, url: message_path, remote: true) do |f| %>
 					<div class="field">
 						<div class="ui fluid icon input">
-							<input type="text" placeholder="Enter a message...">
-							<i class="bordered blue edit icon"></i>
+							<%= f.text_field :body %>
+							<%= f.button %>
 						</div>
 					</div>
-				</form>
+				<% end %>
 			</div>
 		</div>
 	</div>
