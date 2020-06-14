@@ -28,6 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'semantic-ui-sass'
 gem 'jquery-rails'
 gem 'hirb'
+gem 'redis', '~> 3.2'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
